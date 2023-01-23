@@ -1,0 +1,44 @@
+{
+  "name": "toerings",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "pretty": "prettier --write --plugin-search-dir . .",
+    "lint": "eslint --ignore-path .prettierignore .",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.2.0",
+    "lodash-es": "^4.17.21",
+    "path-browserify": "^1.0.1",
+    "uplot": "^1.6.23"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.0.0",
+    "@tauri-apps/cli": "^1.2.2",
+    "@tsconfig/svelte": "^3.0.0",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^18.7.10",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "colord": "^2.9.3",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "prettier": "^2.8.4",
+    "prettier-plugin-svelte": "^2.9.0",
+    "svelte": "^3.54.0",
+    "svelte-awesome-color-picker": "^2.4.1",
+    "svelte-check": "^3.0.0",
+    "svelte-preprocess": "^5.0.0",
+    "tslib": "^2.4.1",
+    "typescript": "^4.6.4",
+    "vite": "^4.0.0"
+  }
+}

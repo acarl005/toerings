@@ -1,0 +1,28 @@
+//! Gets temperature data via sysinfo.
+
+use anyhow::Result;
+
+use super::TempHarvest;
+
+pub fn get_temperature_data(sys: &sysinfo::System) -> Result<Option<Vec<TempHarvest>>> {
+    use sysinfo::{ComponentExt, SystemExt};
+
+    let mut temperature_vec: Vec<TempHarvest> = Vec::new();
+
+    let sensor_data = sys.components();
+    for component in sensor_data {
+        let name = component.label().to_string();
+
+        temperature_vec.push(TempHarvest {
+            name,
+            temperature: component.temperature(),
+        });
+    }
+
+    #[cfg(feature = "nvidia")]
+    {
+        super::nvidia::add_nvidia_data(&mut temperature_vec, temp_type, filter)?;
+    }
+
+    Ok(Some(temperature_vec))
+}
